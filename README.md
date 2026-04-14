@@ -1,18 +1,18 @@
-## 1. Create VPC — vpc-0a024c859ee4d0127
-    What-: Main private network in AWS.
+## 1. Create VPC
+    What:Main private network in AWS.
     
-    Why:-Isolates your resources securely.
+    Why:Isolates your resources securely.
 
-    When:- Before creating any AWS resources.
+    When: Before creating any AWS resources.
 
 
 
 ## 2. Enable DNS Hostnames
-    What:- Gives public DNS names to instances.
+    What:-Gives public DNS names to instances.
     
-    Why:- Easy access via hostname.
+    Why:-Easy access via hostname.
     
-    When:- For public EC2 / websites.
+    When:-For public EC2 / websites.
 
 
 
