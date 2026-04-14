@@ -17,11 +17,11 @@
 
 
 ## 3. Enable DNS Resolution
-What-Allows domain name lookup inside VPC.
+What:- Allows domain name lookup inside VPC.
 
-Why-Needed for internet / AWS service access.
+Why:- Needed for internet / AWS service access.
 
-When-Always recommended.
+When:- Always recommended.
 
 
 
