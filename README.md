@@ -26,238 +26,166 @@ When:- Always recommended.
 
 
 ## 4. Verify VPC Creation
-What
+What - Confirm VPC is active.
 
-Confirm VPC is active.
+Why - Prevents setup issues later.
 
-Why
+When - Right after VPC creation.
 
-Prevents setup issues later.
-
-When
-
-Right after VPC creation.
 
 ## 5. Create S3 Endpoint — vpce-0f5d29e7709c6cef7
-What
+What-  Private connection to Amazon S3.
 
-Private connection to Amazon S3.
+Why - Secure S3 access without internet.
 
-Why
+When - When app needs private S3 access.
 
-Secure S3 access without internet.
 
-When
 
-When app needs private S3 access.
+## 6. Create Public Subnet 1
+What - First subnet for public resources.
 
-## 6. Create Public Subnet 1 — subnet-06df782840f09c5c0
-What
+Why - To host internet-facing servers.
 
-First subnet for public resources.
+When - For web apps.
 
-Why
 
-To host internet-facing servers.
 
-When
+## 7. Create Public Subnet 2
+What -  Second public subnet.
 
-For web apps.
+Why - High availability across Availability Zones.
 
-## 7. Create Public Subnet 2 — subnet-033cb19afc22607ce
-What
+When - For Multi-AZ setup.
 
-Second public subnet.
 
-Why
 
-High availability across Availability Zones.
+## 8. Create Private Subnet 1
+What Internal subnet for backend / DB.
 
-When
+Why - Provides better security.
 
-For Multi-AZ setup.
+When - For APIs / databases.
 
-## 8. Create Private Subnet 1 — subnet-051228adf9c7e3d50
-What
 
-Internal subnet for backend / DB.
 
-Why
+## 9. Create Private Subnet 2 
+What - Second private subnet.
 
-Provides better security.
+Why - High Availability
 
-When
+When - For production setup.
 
-For APIs / databases.
 
-## 9. Create Private Subnet 2 — subnet-0eaf9952fb0cd23fc
-What
-
-Second private subnet.
-
-Why
-
-High availability.
-
-When
-
-For production setup.
 
 ## 10. Create Internet Gateway — igw-0cca320e9c30ee48e
-What
+What- Gateway to connect VPC to internet.
 
-Gateway to connect VPC to internet.
+Why - Allows public access for EC2.
 
-Why
+When - For public apps / websites.
 
-Allows public access for EC2.
 
-When
-
-For public apps / websites.
 
 ## 11. Attach Internet Gateway to VPC
-What
+What-Connect IGW with VPC.
 
-Connect IGW with VPC.
+Why-Enables internet traffic flow.
 
-Why
+When-After IGW creation.
 
-Enables internet traffic flow.
 
-When
-
-After IGW creation.
 
 ## 12. Create Public Route Table — rtb-0cefbb8dab538a83f
-What
+What-Route rules for public subnet.
 
-Route rules for public subnet.
+Why-Controls internet traffic path.
 
-Why
+When-After subnet creation.
 
-Controls internet traffic path.
 
-When
-
-After subnet creation.
 
 ## 13. Create Internet Route
-What
+What- Add 
+route:0.0.0.0/0 → Internet Gateway
 
-Add route:
+Why-Allows outbound internet access.
 
-0.0.0.0/0 → Internet Gateway
-Why
+When-For public subnet setup.
 
-Allows outbound internet access.
 
-When
-
-For public subnet setup.
 
 ## 14. Associate Route Table with Public Subnet 1
-What
+What-Attach route table.
 
-Attach route table.
+Why- Apply internet route.
 
-Why
+When- After route creation. 
 
-Apply internet route.
 
-When
-
-After route creation.
 
 ## 15. Associate Route Table with Public Subnet 2
-What
+What-Attach route table.
 
-Attach route table.
+Why- Enable internet access in second subnet.
 
-Why
+When- For high availability.
 
-Enable internet access in second subnet.
 
-When
-
-For high availability.
 
 ## 16. Create Private Route Table 1 — rtb-05d5b953e6c7ed3ae
-What
+What-Private subnet route rules.
 
-Private subnet route rules.
+Why- Secure internal traffic.
 
-Why
+When- For backend services.
 
-Secure internal traffic.
-
-When
-
-For backend services.
 
 ## 17. Associate Route Table with Private Subnet 1
-What
+What- Attach route table.
 
-Attach route table.
+Why- Apply private routing.
 
-Why
-
-Apply private routing.
-
-When
-
-After route table creation.
+When- After route table creation.
 
 ## 18. Create Private Route Table 2 — rtb-0aa12a0d68c2feabf
-What
+What-Route table for second private subnet.
 
-Route table for second private subnet.
+Why -Provides isolation + HA.
 
-Why
+When- For production setup.
 
-Provides isolation + HA.
 
-When
-
-For production setup.
 
 ## 19. Associate Route Table with Private Subnet 2
-What
+What- Link route table.
 
-Link route table.
+Why- Apply routing rules.
 
-Why
+When -After creation.
 
-Apply routing rules.
-
-When
-
-After creation.
 
 ## 20. Verify Route Table Setup
-What
-
+What - 
 Check:
-
 Route entries
 Subnet associations
-Why
 
-Ensures traffic flows correctly.
+Why- Ensures traffic flows correctly.
 
-When
 
-After full network setup.
+
+When- After full network setup.
+
+
 
 ## 21. Associate S3 Endpoint with Private Route Tables
-    What
+    What - Link S3 endpoint to private route tables.
     
-    - Link S3 endpoint to private route tables.
     
-    Why
+    Why-  Private subnets can access S3 securely.
+
     
-    Private subnets can access S3 securely.
+    When-    For private storage access.
     
-    When
-    
-    For private storage access.
+
