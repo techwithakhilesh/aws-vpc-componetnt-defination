@@ -8,7 +8,7 @@
 
 
 ## 2. Enable DNS Hostnames
-    What:-Gives public DNS names to instances.
+    What:-Gives public DNS names to instances. 
     
     Why:-Easy access via hostname.
     
@@ -17,17 +17,13 @@
 
 
 ## 3. Enable DNS Resolution
-What
+What-Allows domain name lookup inside VPC.
 
-Allows domain name lookup inside VPC.
+Why-Needed for internet / AWS service access.
 
-Why
+When-Always recommended.
 
-Needed for internet / AWS service access.
 
-When
-
-Always recommended.
 
 ## 4. Verify VPC Creation
 What
