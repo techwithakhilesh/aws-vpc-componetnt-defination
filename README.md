@@ -1,18 +1,18 @@
 ## 1. Create VPC
-    What:Main private network in AWS.
+What-Main private network in AWS.
     
-    Why:Isolates your resources securely.
+Why-Isolates your resources securely.
 
-    When: Before creating any AWS resources.
+When- Before creating any AWS resources.
 
 
 
 ## 2. Enable DNS Hostnames
-    What:-Gives public DNS names to instances. 
+What-Gives public DNS names to instances. 
     
-    Why:-Easy access via hostname.
+Why-Easy access via hostname.
     
-    When:-For public EC2 / websites.
+When-For public EC2 / websites.
 
 
 
@@ -180,12 +180,10 @@ When- After full network setup.
 
 
 ## 21. Associate S3 Endpoint with Private Route Tables
-    What - Link S3 endpoint to private route tables.
+What-Link S3 endpoint to private route tables.
     
+Why-Private subnets can access S3 securely.
     
-    Why-  Private subnets can access S3 securely.
-
-    
-    When-    For private storage access.
+When-For private storage access.
     
 
